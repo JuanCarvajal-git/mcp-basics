@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "my-first-server": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--directory", "/home/jmcar/projects/mcp-hackaton/mcp-basics", "python", "server.py"]
+    }
+  }
+}
