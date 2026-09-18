@@ -2,6 +2,44 @@
 
 Basic MCP server that can access simple tools.
 
+## Setup and local server startup
+
+This section explains how to set up the project and run the server locally before using it with an MCP client or the inspector.
+
+### 1. Open the project folder
+
+```bash
+cd /home/jmcar/projects/mcp-hackaton/mcp-basics
+```
+
+### 2. Install dependencies with uv
+
+```bash
+uv sync
+```
+
+This creates and updates the local environment in `.venv/` and installs the packages declared in `pyproject.toml`.
+
+### 3. Start the MCP server
+
+```bash
+uv run python server.py
+```
+
+This launches the server in stdio mode. The process stays alive and waits for MCP requests from a client.
+
+### 4. If you want to visualize it in the MCP Inspector
+
+Sometimes the inspector or npm cache can have stale state. Use these commands:
+
+```bash
+npm cache clean --force
+rm -rf ~/.npm/_npx
+uv run npx @modelcontextprotocol/inspector python server.py
+```
+
+These steps help clear cached npm data and then launch the MCP Inspector against the local Python server so you can inspect the tools, requests, and responses visually.
+
 ## Quick Start
 
 ### 1. Start the server
